@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Application de génération des CVs</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./assets/captcha.js"></script>
+</head>
+<body onload="generate()">
+<div class="login-page">
+  <div class="form">
+    <form id="connexion_form" action="" method="post" class="login-form">
+      <input type="text" name="username" placeholder="Nom d’utilisateur"/>
+      <input type="password" name="password" placeholder="Mot de passe"/>
+      <div id="user-input" class="inline">
+        <div id="image" onclick="generate()" class="inline" selectable="False">
+        </div>
+       
+        <input type="text" id="submit"
+            placeholder="Captcha code" />
+    </div>
+ 
+ 
+ 
+ 
+    <p id="key"></p>
+ 
+  
+ 
+  
+      <button type="button" onclick="login()" >Connexion</button>
+      <button type="submit" id="tr_login" style="display:none;">Connexion</button>
+    </form>
+  </div>
+</div>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./assets/script.js"></script>
+<script>
+//error message
+
+
+var url_string = window.location.href; 
+var url = new URL(url_string);
+var c = url.searchParams.get("m");
+if(c=="1"){
+  Swal.fire({
+  title: 'Erreur!',
+  text: 'Nom Utilisateur ou mot de passe incorrect!',
+  icon: 'error',
+  confirmButtonText: 'OK'
+})
+}
+
+
+
+  </script>
+  
+</body>
+</html>
